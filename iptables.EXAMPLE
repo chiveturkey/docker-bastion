@@ -1,0 +1,12 @@
+### Docker Rules
+
+# Create DOCKER-USER chain.
+-N DOCKER-USER
+# LAN SSH
+-A DOCKER-USER -m state --state NEW -m tcp -p tcp --source 192.168.100.0/24 --dport 22 -j ACCEPT
+# Docker SSH
+-A DOCKER-USER -m state --state NEW -m tcp -p tcp --source 172.17.0.0/16 --dport 22 -j ACCEPT
+# Public IP SSH
+-A DOCKER-USER -m state --state NEW -m tcp -p tcp --source 1.2.3.4 --dport 22 -j ACCEPT
+# Block all other SSH to Docker
+-A DOCKER-USER -m state --state NEW -m tcp -p tcp --dport 22 -j REJECT --reject-with icmp-host-prohibited
