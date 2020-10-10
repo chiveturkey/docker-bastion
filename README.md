@@ -27,14 +27,6 @@ The `build.sh` script will build the bastion container image and will then run i
   ./build.sh
   ```
 
-## Security
-
-Ideally, this environment is behind an edge firewall of some sort.  For additional security, configure iptables on the Docker server to only allow certain source IP ranges.  The DOCKER-USER chain can be used for this purpose.  See iptables.EXAMPLE for details.  The iptables.EXAMPLE file allows several source IP ranges to connect to port 22 and then rejects all others.
-
-## Reference
-
-* https://docs.docker.com/network/iptables/
-
 ## Update Bastion
 
 The `update.sh` script will rebuild the bastion container image and will then run it.
@@ -44,3 +36,11 @@ The `update.sh` script will rebuild the bastion container image and will then ru
   ```
   ./update.sh
   ```
+
+## Security
+
+Ideally, this environment is behind an edge firewall of some sort.  For additional security, configure iptables on the Docker server to only allow certain source IP ranges.  The DOCKER-USER chain can be used for this purpose.  See iptables.EXAMPLE for details.  The iptables.EXAMPLE file allows several source IP ranges to connect to port 22 and then rejects all others.
+
+## Reference
+
+* https://docs.docker.com/network/iptables/
