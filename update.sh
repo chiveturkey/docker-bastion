@@ -10,7 +10,11 @@ do
 done < ../etc/bastion.config
 
 docker build \
-  --no-cache -t bastion .
+  --build-arg local_user="${local_user}" \
+  --build-arg local_user_password="${local_user_password}" \
+  --build-arg root_password="${root_password}" \
+  --no-cache \
+  -t bastion .
 
 # TODO: HACKTAG: There's some sort of race condition that causes this to fail if it executes too
 # soon.  It would be better to watch output from `docker image ls` or something.

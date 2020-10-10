@@ -9,7 +9,8 @@ docker build \
   --build-arg local_user="${local_user}" \
   --build-arg local_user_password="${local_user_password}" \
   --build-arg root_password="${root_password}" \
-  --no-cache -t bastion .
+  --no-cache \
+  -t bastion .
 
 docker run \
   -d \
