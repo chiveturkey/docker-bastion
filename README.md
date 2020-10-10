@@ -13,9 +13,9 @@ Assign a secondary IP on the Docker server for use by the bastion container.  Th
 
 * Example.  On CentOS 7, add a secondary IP.  Here we assume that our network interface card is called `enp1s0`, and the secondary IP we want to add is `192.168.100.1`.
 
-```
-nmcli connection modify enp1s0 +ipv4.addresses "192.168.100.1/24"
-```
+  ```
+  nmcli connection modify enp1s0 +ipv4.addresses "192.168.100.1/24"
+  ```
 
 ## Build and Run Bastion
 
@@ -23,9 +23,9 @@ The `build.sh` script will build the bastion container image and will then run i
 
 * Build bastion image.
 
-```
-./build.sh
-```
+  ```
+  ./build.sh
+  ```
 
 ## Security
 
@@ -39,6 +39,8 @@ Ideally, this environment is behind an edge firewall of some sort.  For addition
 
 The `update.sh` script will rebuild the bastion container image and will then run it.
 
-```
-./update.sh
-```
+* Update bastion image.
+
+  ```
+  ./update.sh
+  ```
